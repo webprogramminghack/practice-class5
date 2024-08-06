@@ -1,0 +1,62 @@
+@import 'base';
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+@import 'lessons';
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: rem-calc(10);
+
+  .flex-item {
+    width: rem-calc(200);
+    height: rem-calc(200);
+
+    &.item-1 {
+      // background: $color-brand;
+      background: map-get($colors, 'brand');
+    }
+
+    &.item-2 {
+      // background: $color-success;
+      background: map-get($colors, 'success');
+    }
+
+    &.item-3 {
+      // background: $color-warning;
+      background: map-get($colors, 'warning');
+    }
+  }
+}
+
+h1 {
+  @include typography('display-2xl', 'bold');
+
+  @include md {
+    color: red;
+  }
+}
+
+.contact {
+  .headings {
+    .title {
+      color: blue;
+
+      @include md {
+        color: red;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contact {
+    .headings {
+      .title {
+        color: red;
+      }
+    }
+  }
+}
